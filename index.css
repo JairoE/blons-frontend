@@ -1,0 +1,62 @@
+#myCanvas{
+  background-color: #80A5EC;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 1000px;
+}
+
+.game{
+  background-color: #80A5EC;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 1000px;
+  opacity: 1;
+}
+
+#monkey{
+  background-color: #5F4715;
+  height: 100px;
+  position: absolute;
+  width: 40px;
+}
+
+#Easy {
+  color: white;
+  font-size: 4rem;
+  position: relative;
+  text-decoration: none;
+}
+
+#Medium {
+  color: white;
+  font-size: 4rem;
+  position: relative;
+  text-decoration: none;
+}
+
+#Nanerz {
+  color: white;
+  font-size: 4rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.ballon {
+  width: 20px;
+  height: 20px;
+  background: tan;
+  position: absolute;
+}
+
+.bird {
+  width: 20px;
+  height: 20px;
+  background: black;
+  position: absolute;
+}
