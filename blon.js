@@ -5,10 +5,11 @@ class Blon {
     this.width = 50
     this.height = 50
     this.counter = 0
+    this.speed = Math.ceil(Math.random() * 5)
   }
 
   moveBlon(){
-      this.x = this.x - 5
+      this.x = this.x - this.speed
       // 75*noise(0.01 * this.x)
       fill(255)
       ellipse(this.x, this.y + 10*this.sine(), this.width, this.height)
