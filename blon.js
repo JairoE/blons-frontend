@@ -5,13 +5,15 @@ class Blon {
     this.width = 50
     this.height = 50
     this.counter = 0
+    this.image = null
   }
 
   moveBlon(){
-      this.x = this.x - 5
+    this.x = this.x - 5
+    image(this.image, this.x, this.y + 10*this.sine(), this.width, this.height)
       // 75*noise(0.01 * this.x)
-      fill(255)
-      ellipse(this.x, this.y + 10*this.sine(), this.width, this.height)
+      // fill(255)
+      // ellipse(this.x, this.y + 10*this.sine(), this.width, this.height)
       // checkCollision, if collision, remove ballon from array
     }
 

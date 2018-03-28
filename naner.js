@@ -2,9 +2,10 @@ class Naner{
   constructor(){
     this.x = 40
     this.y = 500
-    this.width = 10
-    this.height = 20
+    this.width = 60
+    this.height = 80
     this.onScreen = true
+    this.image = null
   }
 
   visible() {
@@ -14,8 +15,9 @@ class Naner{
   }
 
   showNaner(){
-    fill('#ffe135')
-    ellipse(this.x, this.y, this.width, this.height)
+  //  fill('#ffe135')
+    image(this.image, this.x, this.y, this.width, this.height)
+  //  ellipse(this.x, this.y, this.width, this.height)
   }
 
   setTrajectory() {
