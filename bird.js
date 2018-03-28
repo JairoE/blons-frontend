@@ -2,8 +2,8 @@ class Bird{
   constructor(){
     this.x = 1000
     this.y = Math.floor(Math.random() * 400)
-    this.width = 60
-    this.height = 60
+    this.width = 70
+    this.height = 30
     this.image = null
   }
 

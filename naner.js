@@ -1,9 +1,9 @@
 class Naner{
   constructor(){
-    this.x = 40
-    this.y = 500
-    this.width = 60
-    this.height = 80
+    this.x = 85
+    this.y = 490
+    this.width = 40
+    this.height = 60
     this.onScreen = true
     this.image = null
   }
@@ -26,7 +26,7 @@ class Naner{
   }
 
   showTrajectory() {
-    line(this.x, this.y, mouseX, mouseY)
+    line(this.x + 17, this.y + 35, mouseX, mouseY)
   }
 
   throwNaner(slope){

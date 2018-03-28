@@ -11,6 +11,8 @@ navBar.append(scoreboard)
 function preload() {
   naner.image = loadImage('images/naner.png')
   naner.image.src = "http://localhost:3000/images/naner.png"
+  mnky = loadImage('images/mnky.png')
+  landscape = loadImage('images/landscape.png')
 
   // blons.forEach((blon) => {
   //   blon.image = loadImage('images/blon.png')
@@ -38,8 +40,8 @@ function nanerHandler () {
   if (clicked === true){
     naner.throwNaner(slope)
     if (!naner.onScreen) {
-      naner.x = 40
-      naner.y = 500
+      naner.x = 85
+      naner.y = 490
       clicked = false
       naner.onScreen = true
     }
@@ -111,7 +113,6 @@ function endgame() {
   scoreboard.innerText = 0
   blons = []
   brdz = []
-  console.log(brdz)
   naner = new Naner()
   preload()
   clicked = false
@@ -122,7 +123,8 @@ function endgame() {
 }
 
 function draw(){
-  background(color(127, 199, 237))
+  background(landscape)
+  image(mnky, 3, 510, 90, 90)
 
   nanerHandler()
   blonHandler()
