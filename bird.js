@@ -1,16 +1,11 @@
 class Bird{
-  constructor(){
+  constructor(birdNum){
     this.x = 1000
-    this.y = Math.floor(Math.random() * 400)
-<<<<<<< HEAD
+    this.y = Math.floor(500 - (100*birdNum))
     this.width = 70
     this.height = 30
     this.image = null
-=======
-    this.width = 20
-    this.height = 20
-    this.speed = Math.ceil(Math.random() * 7)
->>>>>>> 4f064031f8a682b602663d0943e55a550757ca33
+    this.speed = Math.ceil(Math.random() * 5)
   }
 
   moveBrd(){

@@ -1,82 +1,75 @@
-#myCanvas{
-  background-color: #80A5EC;
-  height: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 1000px;
-}
-
-.game{
-  background-color: #80A5EC;
-  height: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 1000px;
-  opacity: 1;
-}
-
-#monkey{
-  background-color: #5F4715;
-  height: 100px;
-  position: absolute;
-  width: 40px;
-}
-
-#Easy {
-  color: white;
-  font-size: 4rem;
-  position: relative;
-  text-decoration: none;
-}
-
-#Medium {
-  color: white;
-  font-size: 4rem;
-  position: relative;
-  text-decoration: none;
-}
-
-#Nanerz {
-  color: white;
-  font-size: 4rem;
-  position: relative;
-  text-decoration: none;
-}
-
-.ballon {
-  width: 20px;
-  height: 20px;
-  background: tan;
-  position: absolute;
-}
-
-.bird {
-  width: 20px;
-  height: 20px;
-  background: black;
-  position: absolute;
-}
-
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: green;
+  width: 1000px;
+  background-color: black;
+  border-radius: 20px;
 }
 
 li {
   display: inline;
-  padding: 14px 50px;
+  padding: 14px 40px;
+  color: white;
+  font-family: Mario;
+  font-size: 18px;
+}
+
+#press{
+  color: green;
+}
+
+#background_color{
+  background-color: #ffe135
 }
 
 #canvasContainer{
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%) }
+  transform: translate(-50%, -50%);
+  /* border: 5px solid black; */
+}
+
+
+canvas {
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+#menu{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#leaderboard{
+  position: absolute;
+  /* top: 83%; */
+  top: 880px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+form{
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  /* margin-right: -50%; */
+  transform: translate(-50%, -50%)
+  z-index: 10;
+}
+
+input{
+  border-radius: 20px;
+}
+
+button{
+  border-radius: 10px;
+}
+
+table, th, td {
+   border: 2px solid black;
 }

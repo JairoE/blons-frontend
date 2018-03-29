@@ -2,36 +2,67 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>NANERZ</title>
+    <title>BLONZ</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+
+  </head>
+  <body id="background_color">
+    <div id="body">
+      <div id="header">
+        <style type="text/css">
+          @font-face {
+            font-family: Mario;
+            src: url(/fonts/mario.ttf) format("truetype");
+          }
+
+          div.customFont {
+            font-family: Mario;
+            font-size: 80px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            border-radius: 90px;
+            width: 1000px;
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+          }
+
+
+        </style>
+
+        <div class="customFont">BLONZ</div>
+      </div>
+      <div id="menu">
+        <ul>
+          <li>username</li>
+          <li id="press">press space to play</li>
+          <li>current score: <span id='current-score'>0</span></li>
+          <li>highscore: <span id='high-score'>0</span></li>
+        </ul>
+      </div>
+  </div>
+
+  <form>
+    <input placeholder="Enter Username"></input>
+    <button>Enter</button>
+  </form>
+    <!-- <div class="item">Press space bar to start</div> -->
+    <!-- <div class="item">SCORE: <span id='current-score'>0</span></div>
+    <div class="item">HIGHSCORE: <span id='high-score'>0</span></div> -->
 
     <script src="blon.js"></script>
     <script src="bird.js"></script>
     <script src="naner.js"></script>
     <script src="p5.collide2d.js"></script>
     <script src="p5.dom.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script> -->
     <script src="sketch.js"></script>
-
-  </head>
-  <body>
-    <!-- <div id="game" class="game">
-
-
-      <div id="start">
-        <a id="Easy">Easy</a>
-        <br>
-        <a id="Medium">Medium</a>
-        <br>
-        <a id="Nanerz">Nanerz</a>
-      </div>
-
-
-    </div> -->
-
 
   </body>
 </html>

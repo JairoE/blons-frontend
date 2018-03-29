@@ -1,17 +1,17 @@
-class Blon {
-  constructor(powerup=null){
+class powerUpBlon(){
+  constructor(power){
     this.x = 1000
     this.y = Math.floor(Math.random() * 450)
     this.width = 50
     this.height = 50
     this.counter = 0
     this.image = null
-    this.speed = Math.ceil(Math.random() * 5)
+    this.power = power
   }
 
   moveBlon(){
-    this.x = this.x - this.speed
-    image(this.image, this.x, this.y + 10*this.sine(), this.width, this.height)
+    this.x = this.x - 7
+    image(this.image, this.x, this.y + 50*this.sine(), this.width, this.height)
   }
 
 
@@ -19,5 +19,9 @@ class Blon {
     let y = Math.sin(this.counter*2*PI)
     this.counter += 0.02
     return y
+  }
+
+  stopBirds(){
+    return false 
   }
 }
