@@ -8,6 +8,7 @@ let score = document.createElement('span')
 let highscoreInt = document.createElement('span')
 let firstGame = true
 let canvasContainer = document.createElement('div')
+let leaderboard = document.createElement('ul')
 let userId = null
 
 
@@ -152,22 +153,31 @@ function updateUserStats() {
 }
 
 function showLeaderBoard(){
-  sorted = null
+  let sorted = null;
   fetch('http://localhost:3000/users')
   .then(res => res.json())
   .then(json => {
-    sorted = json
-  })
+    sorted = json;
+    sorted = sorted.sort((a,b) => {
+      return b.highscore - a.highscore
+    })
 
-  sorted = sorted.sort((a,b) => {
-    b.highscore - a.highscore
+    leaderboard.innerText = "HIGH SCORES"
+
+    for(i=0; i<10; i++){
+      li = document.createElement('li')
+      li.innerText = `${sorted[i].username}  :  ${sorted[i].highscore}`
+      leaderboard.append(li)
+    }
+
+    document.body.insertBefore(leaderboard, canvasContainer)
   })
-  console.log(sorted)
 }
 
 function setup(){
   createNavBar()
   createCanvas(1000,600)
+  showLeaderBoard()
   let canvas = document.getElementsByTagName('canvas')[0]
   canvasContainer.setAttribute('id', 'canvasContainer')
   canvasContainer.append(canvas)
@@ -195,13 +205,6 @@ function setup(){
 function draw(){
   background(color(127, 199, 237))
 
-
-  // if (firstGame === true){
-  //   let input = createInput();
-  //   input.position(450,300)
-  //   let button = createButton('Enter Username');
-  //   button.position(input.x + input.width+ 1, input.y)
-  // }
 
   if (clickedEasy === true) {
     nanerHandler()
