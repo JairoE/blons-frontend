@@ -30,8 +30,8 @@ class Naner{
   }
 
   throwNaner(slope){
-    this.x = this.x + ((slope.y)/80)
-    this.y = this.y +  ((slope.x)/80)
+    this.x = this.x + ((slope.y)/75)
+    this.y = this.y +  ((slope.x)/75)
     this.visible()
   }
 
