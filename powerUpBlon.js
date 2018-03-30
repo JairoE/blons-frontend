@@ -9,7 +9,7 @@ class powerUpBlon(){
     this.power = power
   }
 
-  moveBlon(){
+  movepB(){
     this.x = this.x - 7
     image(this.image, this.x, this.y + 50*this.sine(), this.width, this.height)
   }
@@ -22,6 +22,6 @@ class powerUpBlon(){
   }
 
   stopBirds(){
-    return false 
+    return false
   }
 }

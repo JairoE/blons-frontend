@@ -1,6 +1,6 @@
 let blons = []
 let brdz = []
-let powerBlonz = []
+let powerBlons = []
 let naner = new Naner()
 let clicked = false
 let slope;
@@ -108,23 +108,28 @@ function blonHandler () {
 }
 
 function powerUpBlons() {
-  if (frameCount % 1500){
-    pB = new powerUpBlon("stop")
-    powerBlons.push(pb)
+  // if (frameCount%40 === 0){
+  //   let pB = new powerUpBlon("stop")
+  //   pB.image = loadImage('images/brd_blon.png')
+  //   pB.image.src = "/images/brd_blon.png"
+  //   powerBlons.push(pB)
+  // }
+  debugger
+  if (frameCount%40 === 0){
+    let pB = new powerUpBlon("100")
+    pB.image = loadImage('images/100_blon.png')
+    pB.image.src = "/images/100_blon.png"
+    powerBlons.push(pB)
+    debugger
   }
 
-  if (frameCount % 2500){
-    pb = new powerUpBlon("plus")
-    powerBlons.push(pb)
-  }
+  if (powerBlons.length > 0){
+    powerBlons.forEach((pB) => {
 
-  if (powerBlonz.length > 0){
-    powerBlonz.forEach((pB) => {
-
-      if (blon.x < 0){
-        blons.splice(blons.indexOf(blon), 1)
+      if (pB.x < 0){
+        powerBlons.splice(powerBlons.indexOf(pB), 1)
       } else{
-        pb.moveBlon()
+        pb.movepB()
         hit = collideRectCircle(naner.x, naner.y, naner.width, naner.height, pb.x, pb.y, pb.width)
         if (hit){
           if (pb.power === "100"){
@@ -132,7 +137,7 @@ function powerUpBlons() {
           } else {
             stoppedBirds = pb.stopBirds()
           }
-          pb.splice(blons.indexOf(blon), 1)
+          powerBlons.splice(powerBlons.indexOf(pB), 1)
         }
       }
 
@@ -251,9 +256,7 @@ function draw(){
   if (clickedEasy === true) {
     nanerHandler()
     blonHandler()
+    debugger
+    powerUpBlons()
   }
-}
-
-function showInput(){
-  document.createElement('input')
 }
