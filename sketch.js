@@ -114,7 +114,7 @@ function spawnBird(num){
       birdNum = 1
     }
   }
-  if(frameCount%270 === 0 && num ===2){
+  if(frameCount%400 === 0 && num ===2){
 
     brd2 = new Bird(birdNum++)
     if (birdNum > 5){
