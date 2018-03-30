@@ -1,4 +1,4 @@
-class powerUpBlon(){
+class powerUpBlon{
   constructor(power){
     this.x = 1000
     this.y = Math.floor(Math.random() * 450)

@@ -70,14 +70,10 @@ function blonHandler () {
     blons.push(blon)
   }
 
-  if(frameCount%180 === 0 && !stoppedBirds){
-    brd = new Bird(birdNum++)
-    if (birdNum > 5){
-      birdNum = 1
-    }
-    brd.image = loadImage('images/brd.png')
-    brd.image.src = "/images/brd.png"
-    brdz.push(brd)
+  if(frameCount < 1800){
+    spawnBird()
+  }else if (frameCount > 1800){
+    spawnBird(2)
   }
 
   blons.forEach((blon)=>{
@@ -99,12 +95,35 @@ function blonHandler () {
       brdz.splice(brdz.indexOf(brd), 1)
     }else{
       brd.moveBrd()
-      hit = collideRectRect(naner.x, naner.y, naner.width-5, naner.height-5, brd.x, brd.y, brd.width, brd.height)
+      hit = collideRectRect(naner.x, naner.y, naner.width-5, naner.height-5, brd.x, brd.y, brd.width-5, brd.height-5)
       if (hit){
         endgame()
       }
     }
   })
+}
+
+function spawnBird(num){
+  if(frameCount%180 === 0 && !stoppedBirds){
+    brd = new Bird(birdNum++)
+    brd.image = loadImage('images/brd.png')
+    brd.image.src = "/images/brd.png"
+    brdz.push(brd)
+
+    if (birdNum > 5){
+      birdNum = 1
+    }
+  }
+  if(frameCount%270 === 0 && num ===2){
+
+    brd2 = new Bird(birdNum++)
+    if (birdNum > 5){
+      birdNum = 1
+    }
+    brd2.image = loadImage('images/brd.png')
+    brd2.image.src = "/images/brd.png"
+    brdz.push(brd2)
+  }
 }
 
 function powerUpBlons() {
@@ -114,13 +133,11 @@ function powerUpBlons() {
   //   pB.image.src = "/images/brd_blon.png"
   //   powerBlons.push(pB)
   // }
-  debugger
-  if (frameCount%40 === 0){
+  if (frameCount%2500 === 0){
     let pB = new powerUpBlon("100")
     pB.image = loadImage('images/100_blon.png')
     pB.image.src = "/images/100_blon.png"
     powerBlons.push(pB)
-    debugger
   }
 
   if (powerBlons.length > 0){
@@ -129,13 +146,13 @@ function powerUpBlons() {
       if (pB.x < 0){
         powerBlons.splice(powerBlons.indexOf(pB), 1)
       } else{
-        pb.movepB()
-        hit = collideRectCircle(naner.x, naner.y, naner.width, naner.height, pb.x, pb.y, pb.width)
+        pB.movepB()
+        let hit = collideRectCircle(naner.x, naner.y, naner.width, naner.height, pB.x, pB.y, pB.width)
         if (hit){
-          if (pb.power === "100"){
+          if (pB.power === "100"){
             score.innerText = parseInt(score.innerText) + 100
           } else {
-            stoppedBirds = pb.stopBirds()
+            stoppedBirds = pB.stopBirds()
           }
           powerBlons.splice(powerBlons.indexOf(pB), 1)
         }
@@ -215,7 +232,7 @@ function showLeaderBoard(){
       <td> ${sorted[i].highscore} </td> </tr>`
     }
     leaderboard.id="leaderboard"
-    document.body.append(leaderboard)
+    canvasContainer.append(leaderboard)
 
 
 
@@ -256,7 +273,6 @@ function draw(){
   if (clickedEasy === true) {
     nanerHandler()
     blonHandler()
-    debugger
     powerUpBlons()
   }
 }
