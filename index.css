@@ -23,11 +23,10 @@ li {
 
 #canvasContainer{
   position: absolute;
-  top: 52%;
+  top: 72%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  /* border: 5px solid black; */
 }
 
 
@@ -46,7 +45,6 @@ canvas {
 
 #leaderboard{
   position: absolute;
-  /* top: 83%; */
   top: 120%;
   left: 50%;
   margin-right: -50%;
@@ -57,7 +55,6 @@ form{
   position: absolute;
   top: 30%;
   left: 42%;
-  /* margin-right: -50%; */
   transform: translate(-50%, -50%)
   z-index: 10;
 }

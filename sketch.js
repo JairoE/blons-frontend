@@ -114,7 +114,7 @@ function spawnBird(num){
       birdNum = 1
     }
   }
-  if(frameCount%400 === 0 && num ===2){
+  if(frameCount%400 === 0 && num === 2){
 
     brd2 = new Bird(birdNum++)
     if (birdNum > 5){
@@ -199,7 +199,7 @@ function createUser() {
   .then(json => {
     userId=json.id
   })
-  document.getElementsByTagName('ul')[0].children[0].innerText = name
+  document.getElementsByTagName('ul')[0].children[2].innerText = name
   document.getElementsByTagName('form')[0].remove()
 }
 
@@ -213,6 +213,16 @@ function updateUserStats() {
 		highscore: highscoreInt.innerText
     })
   })
+}
+
+function showInstructions() {
+  const instructions = document.createElement('div')
+  instructions.innerHTML = `<center><h2>instructions:</h2>
+  <h3>launch the naner to pop as many blons as you can without hitting a brd</h3>
+  <h3>click anywhere to launch the naner - the further the click, the faster the naner goes</h3>
+  <h3>keep an eye out for power blons</h3>
+  <h3>press space to play!</h3></center>`
+  canvasContainer.append(instructions)
 }
 
 function showLeaderBoard(){
@@ -244,13 +254,15 @@ function updateLeaderBoard(){
 }
 
 function setup(){
-  // createNavBar()
   createCanvas(1000,600)
   let canvas = document.getElementsByTagName('canvas')[0]
   canvasContainer.setAttribute('id', 'canvasContainer')
   canvasContainer.append(canvas)
   body.append(canvasContainer)
+  showInstructions()
   showLeaderBoard()
+
+
 
   window.addEventListener('keydown', function(event){
     if (event.which === 32 && submittedName === true) {

@@ -15,9 +15,7 @@ class Naner{
   }
 
   showNaner(){
-  //  fill('#ffe135')
     image(this.image, this.x, this.y, this.width, this.height)
-  //  ellipse(this.x, this.y, this.width, this.height)
   }
 
   setTrajectory() {
