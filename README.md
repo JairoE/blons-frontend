@@ -5,7 +5,7 @@ BLONZ - Online game where the goal is to pop as many balloons as you can while a
 Created by Jairo Espinosa & Camille Jackson
 
 ____________
-Demo -> https://www.youtube.com/watch?v=7YXeMFeY6eM
+Demo -> 
 ____________
 ## Built with:
 Ruby on Rails
