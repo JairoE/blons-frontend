@@ -1,34 +1,45 @@
-ul {
-  list-style-type: none;
-  width: 1000px;
+@font-face {
+  font-family: "Mario";
+  src: url(fonts/mario.ttf) format("truetype");
+}
+
+#header {
+  text-align: center;
   background-color: black;
-  border-radius: 20px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
 }
 
 li {
+  flex-grow: 1;
   display: inline;
-  padding: 14px 40px;
   color: white;
-  font-family: Mario;
+  font-family: "Mario";
   font-size: 18px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 #press{
   color: green;
 }
 
-#background_color{
-  background-color: #ffe135
+#gameContainer {
+  background-color: #ffe135;
+  width: 1000px;
+  margin: auto;
 }
 
 #canvasContainer{
-  position: absolute;
-  top: 72%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 
+#body {
+  background-color: #ffe135;
+}
 
 canvas {
   border: 5px solid black;
@@ -36,26 +47,22 @@ canvas {
 }
 
 #menu{
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: black;
 }
 
 #leaderboard{
-  position: absolute;
+  position: relative;
   top: 120%;
   left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+
 }
 
 form{
-  position: absolute;
-  top: 30%;
-  left: 42%;
-  transform: translate(-50%, -50%)
+  font-family: Arial;
+  color: black;
   z-index: 10;
 }
 
@@ -69,4 +76,19 @@ button{
 
 table, th, td {
    border: 2px solid black;
+}
+
+h1.customFont {
+  font-family: "Mario";
+  font-size: 80px;
+  color: white;
+}
+
+#start-button{
+  background-color: Green;  
+}
+
+#pause-button{
+  background-color: red;
+  z-index: 1;
 }

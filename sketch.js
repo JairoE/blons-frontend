@@ -9,12 +9,13 @@ let score = document.getElementById('current-score')
 let highscoreInt = document.getElementById('high-score')
 let firstGame = true
 let canvasContainer = document.createElement('div')
-let body = document.getElementById('body')
+let gameContainer = document.getElementById('gameContainer')
 let form = document.getElementsByTagName('form')[0]
 let userId = null
 let submittedName = false
 let stoppedBirds = false
 let birdNum = 1
+let buttonContainer = document.getElementById("button-container")
 
 function preload() {
   naner.image = loadImage('images/naner.png')
@@ -199,8 +200,8 @@ function createUser() {
   .then(json => {
     userId=json.id
   })
-  document.getElementsByTagName('ul')[0].children[2].innerText = name
-  document.getElementsByTagName('form')[0].remove()
+  document.getElementById("username").innerText = name
+  
 }
 
 function updateUserStats() {
@@ -255,36 +256,57 @@ function updateLeaderBoard(){
 
 function setup(){
   createCanvas(1000,600)
+  background(landscape)
+  image(mnky, 3, 510, 90, 90)
   let canvas = document.getElementsByTagName('canvas')[0]
   canvasContainer.setAttribute('id', 'canvasContainer')
   canvasContainer.append(canvas)
-  body.append(canvasContainer)
-  showInstructions()
-  showLeaderBoard()
+  document.getElementById("gameContainer").append(canvasContainer)
+  showInstructions();
+  showLeaderBoard();
 
+  // make a loop for the pause and start button 
 
+  let buttonHandler = (()=>{
 
-  window.addEventListener('keydown', function(event){
-    if (event.which === 32 && submittedName === true) {
-      clickedEasy = true
+    let pauseButton = document.createElement("button")
+    pauseButton.setAttribute("id","pause-button")
+    pauseButton.innerHTML = "pause"
+    pauseButton.addEventListener('click',(event)=>{
+      buttonContainer.innerHTML=""
+      buttonContainer.append(startButton)
+      noLoop()
+    })
+    let startButton = document.getElementById("start-button")
+
+    return function(){
+        //add and remove button event listeners 
+          if (submittedName === true){
+              buttonContainer.innerHTML = ""
+              buttonContainer.append(pauseButton)
+              loop()
+          }
     }
   })
+
+  document.getElementById("start-button").addEventListener('click', buttonHandler)
 
   form.addEventListener('submit', function(event){
     event.preventDefault();
     createUser();
     submittedName = true
   })
+  noLoop()
 }
 
 function draw(){
-  background(landscape)
-  image(mnky, 3, 510, 90, 90)
+  // background(landscape)
+  // image(mnky, 3, 510, 90, 90)
 
 
-  if (clickedEasy === true) {
+  // if (clickedEasy === true) {
     nanerHandler()
     blonHandler()
     powerUpBlons()
-  }
+  // }
 }

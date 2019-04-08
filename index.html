@@ -10,50 +10,23 @@
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
 
   </head>
-  <body id="background_color">
-    <div id="body">
+  <body id="body">
+    <div id="gameContainer">
       <div id="header">
-        <style type="text/css">
-          @font-face {
-            font-family: Mario;
-            src: url(/fonts/mario.ttf) format("truetype");
-          }
-
-          div.customFont {
-            font-family: Mario;
-            font-size: 80px;
-            text-align: center;
-            color: white;
-            background-color: black;
-            border-radius: 90px;
-            width: 1000px;
-            position: absolute;
-            top: 6%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-          }
-        </style>
-
-        <div class="customFont">BLONZ</div>
+        <h1 class="customFont">BLONZ</h1>
       </div>
       <div id="menu">
-        <ul>
-          <li></li>
-          <li></li>
-          <li>username</li>
-          <li>current score: <span id='current-score'>0</span></li>
-          <li>highscore: <span id='high-score'>0</span></li>
-        </ul>
+        <li id="username">  <form>
+            <input placeholder="Enter Username"></input>
+            <button>Enter</button>
+          </form></li>
+        <li>current score: <span id='current-score'>0</span></li>
+        <li>highscore: <span id='high-score'>0</span></li>
+        <li id="button-container"><button id="start-button">start</button></li>
       </div>
-
-  </div>
-
-  <form>
-    <input placeholder="Enter Username"></input>
-    <button>Enter</button>
-  </form>
-
+    </div>
+    
+    
     <script src="blon.js"></script>
     <script src="bird.js"></script>
     <script src="naner.js"></script>
